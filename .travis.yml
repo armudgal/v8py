@@ -3,10 +3,6 @@ python:
     - 2.7
     - 3.5
 
-dist: trusty
-sudo: false
-group: beta
-
 matrix:
   include:
     - sudo: required
@@ -26,7 +22,7 @@ install:
 
 script:
     - ./setup.py test
-    - docker run --rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/travis/build-wheels.sh
+    - docker run --rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/.travis/build-wheels.sh
     - ls wheelhouse/
 
 # it takes ages to compile v8 so don't do it too often
