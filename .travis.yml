@@ -1,9 +1,5 @@
 language: python
 sudo: required
-python:
-    - 2.7
-    - 3.5
-
 services:
     - docker
 
@@ -13,8 +9,7 @@ env:
 
 install:
     - docker pull $DOCKER_IMAGE
-    - pip install twine pytest greenstack
-    - export CFLAGS='-g -O0 --coverage'
+#    - export CFLAGS='-g -O0 --coverage'
 
 script:
     - docker run --rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/.travis/build-wheels.sh
