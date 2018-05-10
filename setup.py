@@ -81,7 +81,7 @@ def get_v8():
 
     if not os.path.isdir('v8/.git'):
         print('downloading v8')
-        run('fetch --force v8')
+        run('python2.7 depot_tools/fetch.py --force v8')
     else:
         print('updating v8')
         with cd('v8'):

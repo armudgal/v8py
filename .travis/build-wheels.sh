@@ -3,6 +3,7 @@ set -e -x
 
 # Install a system package required by our library
 #yum install -y atlas-devel
+export PATH=$PATH:/opt/python/cp27-cp27m/bin
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
